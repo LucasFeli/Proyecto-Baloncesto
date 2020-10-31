@@ -24,3 +24,4 @@ En principio la canasta se movera de derecha a izquierda y viceverza, el objetiv
 - Crear y vincular los archivos: main.js, game.js, player.js, balls.js
 - Construir DOM en main
 - Construir las 3 pantallas del juego, incio, juego y restart
+- Crear el constructor de player
