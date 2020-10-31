@@ -17,3 +17,10 @@ En principio la canasta se movera de derecha a izquierda y viceverza, el objetiv
 4. player.js
 5. balls.js
 
+
+# Tasks
+
+- Setup git & GitHub
+- Crear y vincular los archivos: main.js, game.js, player.js, balls.js
+- Construir DOM en main
+- Construir las 3 pantallas del juego, incio, juego y restart
