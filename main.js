@@ -15,7 +15,7 @@ const main = () => {
             </section>
         `);
         const startGame = document.querySelector("button");
-        startGame.addEventListener("click", pantallaIncio);
+        startGame.addEventListener("click", pantallaJuego);
     };
 
     const pantallaJuego = ()=> {
@@ -25,6 +25,6 @@ const main = () => {
             </secttion>
         `);
 
-        
+
     }
 }
