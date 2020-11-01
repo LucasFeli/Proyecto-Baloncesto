@@ -3,6 +3,7 @@
 const canvas = document.getElementById("bascket");
 const ctx = canvas.getContext("2d");
 
+
 class Basket {
     constructor() {
       this.x = 290;
