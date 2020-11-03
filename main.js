@@ -20,12 +20,14 @@ const main = () => {
     const buildGameScreen = () => {
         buildDom(`
             <section class ="game-screen">
-                <canvas></canvas>
+                <canvas id = "canvas"></canvas>
             </section>
+
+            <div class = "score"></div>
         `);
 
-        const width = document.querySelector("game-screen")//.offsetWidth;
-        const height = document.querySelector("game-screen")//.offsetHeight;
+        const width = document.querySelector(".game-screen").offsetWidth;
+        const height = document.querySelector(".game-screen").offsetHeight;
 
         const canvasElement = document.querySelector("canvas");
         canvasElement.setAttribute("width",width);

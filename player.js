@@ -6,7 +6,7 @@ class Player {
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
       this.x = this.canvas.height / 2;
-      this.y =  20 + this.size / 2;
+      this.y =  this.canvas.height -8 //10 + this.size / 2;
       this.speed = 5;
       this.direction = 0;
       this.lives = lives;
@@ -16,7 +16,7 @@ class Player {
       this.x = this.x + this.direction * this.speed;
     }
   
-    draw() {  //Cambiar por imagenes 
+    draw() {  //Cambiar por imagen
       this.ctx.fillStyle = "green";
       this.ctx.fillRect(
         this.x - this.size / 2,

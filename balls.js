@@ -6,13 +6,13 @@ class Balls {
         this.canvas = canvas;
         this.ctx = this.canvas.getContext("2d");
         this.x = x;
-        this.y = this.canvas.height;
+        this.y = 10;
         this.speed = 5;
         this.direction = -1;
       }
     
       update() {
-        this.y = this.y + this.direction * this.speed;
+        this.y = this.y - this.direction * this.speed;
       }
     
       draw() {
