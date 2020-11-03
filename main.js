@@ -24,22 +24,22 @@ const main = () => {
             </section>
         `);
 
-        const width = document.querySelector("game-screen").offsetWidth;
-        const height = document.querySelector("game-screen").offsetHeight;
+        const width = document.querySelector("game-screen")//.offsetWidth;
+        const height = document.querySelector("game-screen")//.offsetHeight;
 
         const canvasElement = document.querySelector("canvas");
         canvasElement.setAttribute("width",width);
         canvasElement.setAttribute("height",height);
 
-        const game = new Gamepad(canvasElement);
+        const game = new Game(canvasElement);
         game.gameOverCallback(buildGameOver);
 
         game.startLoop()
 
         const setPlayerDirection = (event) => {
             switch (event.keyCode) {
-                case 37: basket.moveLeft();  console.log('left',  basket); break;
-                case 39: basket.moveRight(); console.log('right', basket); break;
+                case 37: game.player.moveLeft();  console.log('left',  game.player); break;
+                case 39: game.player.moveRight(); console.log('right', game.player); break;
               }
         };
         document.addEventListener("keydown", setPlayerDirection);

@@ -1,26 +1,28 @@
 "use strict";
 
-const canvas = document.getElementById("bascket");
-const ctx = canvas.getContext("2d");
-
 class Balls {
-    constructor() {
-      this.x = 290;
-      this.y = 450;
-      
-      const img = new Image();
-      img.addEventListener('load', () => {
-        this.img = img;
-        this.draw();
-      });
-      img.src = "./images/58b4414eb0a84.image.png";
-    }
-   
-     draw() {
-      ctx.drawImage(this.img, this.x, this.y, 98, 85);
-    }
-  }
+    constructor(canvas, x) {
+        this.size = 20;
+        this.canvas = canvas;
+        this.ctx = this.canvas.getContext("2d");
+        this.x = x;
+        this.y = this.canvas.height;
+        this.speed = 5;
+        this.direction = -1;
+      }
+    
+      update() {
+        this.y = this.y + this.direction * this.speed;
+      }
+    
+      draw() {
+        this.ctx.fillStyle = "red";
+        this.ctx.fillRect(this.x, this.y + this.size/2 , this.size, this.size);
+      }
+    
+      setDirection(direction) {
+        this.direction = direction;
+      }
+    
   
-  const ball = new Balls();
-  
-  
+}
