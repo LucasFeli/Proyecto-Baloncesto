@@ -1,15 +1,17 @@
 "use strict";
 
 class Player {
-    constructor(canvas, lives) {
+    constructor(canvas, points) {
       this.size = 40;
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
-      this.x = this.canvas.height / 2;
-      this.y =  this.canvas.height -8 //10 + this.size / 2;
+      this.x = this.canvas.height /2;
+      this.y =  this.canvas.height -30 //10 + this.size / 2;
       this.speed = 5;
       this.direction = 0;
-      this.lives = lives;
+      this.points = points;
+      
+      
     }
   
     update() {
@@ -31,10 +33,10 @@ class Player {
     }
 
     moveLeft() {
-        this.x -= 25;
+        this.x += 65;
       }
       moveRight() {
-        this.x += 25;
+        this.x += 65;
     }
 
     checkScreen() {
@@ -54,14 +56,25 @@ class Player {
       if (collideRight && collideLeft && collideTop && collideBottom) {
         return true;
       }
-  
-      return false;
+       return false;
+
+
     }
-  
-    loseLive() {
-      this.lives--;
+   //Points
+   addPoints() {
+      this.points ++;
+      document.querySelector(".pointer").innerHTML = "Vidas: <b>" + this.points;
+      
     }
-  
+    /*
+    cronoTime(){
+        this.time --
+        document.querySelector(".pointer").innerHTML = "Time: <b>" + this.time;
+        setInterval( ()=>{this.time--}, 1000);
+        console.log(this.time)
+    }
+    */
+    
    
 }
   

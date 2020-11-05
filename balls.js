@@ -6,7 +6,7 @@ class Balls {
         this.canvas = canvas;
         this.ctx = this.canvas.getContext("2d");
         this.x = x;
-        this.y = 10;
+        this.y = 40;
         this.speed = 5;
         this.direction = -1;
       }

@@ -7,17 +7,34 @@ class Game {
       this.player;
       this.balls = [];
       this.isGameOver = false;
+      this.intervalId = null
+      this.time = 600;
     }
   
+    chronoTime(){
+      const timer = document.querySelector(".pointer")
+      this.intervalId = setInterval( () => {
+       this.time--
+       timer.innerHTML = "Currennt time <br>" + this.time
+       if(this.time === 0) {
+         clearInterval(this.inervalId)
+         this.isGameOver = true
+         this.onGameOver();
+       }
+     }, 3000) 
+    }
+
     startLoop() {
       this.player = new Player(this.canvas, 3);
+      
   
       const loop = () => {
         if (Math.random() > 0.97) {
           const y = Math.random() * this.canvas.height;
           this.balls.push(new Balls(this.canvas, y));
         }
-  
+        
+        this.chronoTime()
         this.checkAllCollisions();
         this.updateCanvas();
         this.clearCanvas();
@@ -52,11 +69,11 @@ class Game {
       this.player.checkScreen();
       this.balls.forEach((ball, index) => {
         if (this.player.checkCollisionBalls(ball)) {
-          this.player.loseLive();
+          this.player.addPoints();
           this.balls.splice(index, 1);
           if (this.player.lives === 0) {
-            this.isGameOver = true;
-            this.onGameOver();
+            //this.isGameOver = true;
+           // this.onGameOver();
           }
         }
       });

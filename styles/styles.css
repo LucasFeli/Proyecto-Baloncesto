@@ -12,7 +12,7 @@
 .score{
     display: inline-block;
     width: 100px;
-    height: 100px;
+    height: 100px; 
     margin-left: 600px;
     margin-bottom: 800px;
     border: 3px solid black;
@@ -23,4 +23,24 @@
 .game-screen {
     width: 80%;
     height: 80vh;
+}
+
+
+.splash-screen{
+    margin: auto;
+    align-items: center;
+}
+
+#game {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
 }
