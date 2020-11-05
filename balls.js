@@ -2,13 +2,14 @@
 
 class Balls {
     constructor(canvas, x) {
-        this.size = 20;
+        this.size = 70;
         this.canvas = canvas;
         this.ctx = this.canvas.getContext("2d");
         this.x = x;
-        this.y = 40;
+        this.y = 60;
         this.speed = 5;
         this.direction = -1;
+        this.image = "./images/58b4414eb0a84.image.png"
       }
     
       update() {
@@ -16,8 +17,10 @@ class Balls {
       }
     
       draw() {
-        this.ctx.fillStyle = "red";
-        this.ctx.fillRect(this.x, this.y + this.size/2 , this.size, this.size);
+        let balon = new Image();
+        balon.src = this.image;
+        //this.ctx.fillStyle = "red";
+        this.ctx.drawImage( balon,this.x, this.y + this.size/2 , this.size, this.size);
       }
     
       setDirection(direction) {

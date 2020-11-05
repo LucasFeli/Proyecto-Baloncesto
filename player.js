@@ -2,15 +2,15 @@
 
 class Player {
     constructor(canvas, points) {
-      this.size = 40;
+      this.size = 150;
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
       this.x = this.canvas.height /2;
-      this.y =  this.canvas.height -30 //10 + this.size / 2;
-      this.speed = 5;
+      this.y =  this.canvas.height -100 //10 + this.size / 2;
+      this.speed = 4;
       this.direction = 0;
       this.points = points;
-      
+      this.image = "./images/Basketball-Net-PNG-High-Quality-Image.png"
       
     }
   
@@ -19,8 +19,11 @@ class Player {
     }
   
     draw() {  //Cambiar por imagen
-      this.ctx.fillStyle = "green";
-      this.ctx.fillRect(
+
+      let canasta = new Image();
+      canasta.src = this.image;
+     // this.ctx.fillStyle = "green";
+      this.ctx.drawImage(canasta,
         this.x - this.size / 2,
         this.y - this.size / 2,
         this.size,

@@ -27,10 +27,13 @@ En principio la canasta se movera de derecha a izquierda y viceverza, el objetiv
 - Construir DOM en main
 - Construir las 3 pantallas del juego, incio, juego y restart
 - Crear el constructor de player
-- Crear el contructor de los balones
-- 
+- Crear el constructor de los balones
+- Refactorizar y pintar en el HTML la cantidad de puntos
+- colocar una cuenta regresiva para recolectar la maxima cantidad posible de balones en el juego
+- Se agregaron las imagenes del balon y la canasta
 
 # Backlog
 
 - Crear un limite de tiempo (1 minuto),para recolectar balones.
 - Crear al menos otra pantalla.
+- Colocar las imagenes de fondo del pantalla y del canvas
