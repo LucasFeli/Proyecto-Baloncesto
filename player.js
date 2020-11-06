@@ -2,7 +2,7 @@
 
 class Player {
     constructor(canvas, points) {
-      this.size = 150;
+      this.size = 180;
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
       this.x = this.canvas.height /2;
@@ -66,7 +66,7 @@ class Player {
    //Points
    addPoints() {
       this.points ++;
-      document.querySelector(".pointer").innerHTML = "Vidas: <b>" + this.points;
+      document.querySelector(".pointer").innerHTML = "Canastas: <b>" + this.points;
       
     }
     /*

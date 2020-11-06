@@ -1,4 +1,8 @@
 
+body{
+    background-image: url("../images/f3e200d2c3dfd61d7d383593867a64eb.jpg") ;
+}
+
 
 #canvas {
  width: 700px;
@@ -6,6 +10,9 @@
  margin: 0 auto;
  display: block;
  border: 3px solid black;
+ background-image: url("../images/dieta-baloncesto.jpg");
+ 
+
 }
 
 
@@ -29,6 +36,12 @@
 .splash-screen{
     margin: auto;
     align-items: center;
+    background-image: "url("f3e200d2c3dfd61d7d383593867a64eb")";
+}
+
+h1{
+    font-weight: bold;
+    color: blue;
 }
 
 #game {
@@ -47,4 +60,8 @@
 
 .pointer{
     display: flex;
+}
+
+.container {
+    background-image: "url(../images/f3e200d2c3dfd61d7d383593867a64eb.jpg)";
 }

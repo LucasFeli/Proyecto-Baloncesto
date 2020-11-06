@@ -7,26 +7,30 @@ class Game {
       this.player;
       this.balls = [];
       this.isGameOver = false;
-      this.intervalId = null
+      this.intervalId = null;
       this.time = 600;
+     
     }
   
     chronoTime(){
-      const timer = document.querySelector(".pointer")
+      const timer = document.querySelector(".pointerB")
       this.intervalId = setInterval( () => {
        this.time--
        timer.innerHTML = "Currennt time <br>" + this.time
-       if(this.time === 0) {
-         clearInterval(this.inervalId)
+         if(this.time == 0) {
+         clearInterval(this.intervalId)
          this.isGameOver = true
          this.onGameOver();
+         
        }
      }, 3000) 
+     
     }
 
     startLoop() {
       this.player = new Player(this.canvas, 3);
       
+     
   
       const loop = () => {
         if (Math.random() > 0.97) {
