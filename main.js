@@ -46,8 +46,8 @@ const main = () => {
 
         const setPlayerDirection = (event) => {
             switch (event.keyCode) {
-                case 37: game.player.moveLeft(-1);  console.log('left',  game.player); break;
-                case 39: game.player.moveRight(-1); console.log('right', game.player); break;
+                case 37: game.player.moveLeft();  console.log('left',  game.player); break;
+                case 39: game.player.moveRight(); console.log('right', game.player); break;
               }
         };
         document.addEventListener("keydown", setPlayerDirection);

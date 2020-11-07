@@ -75,10 +75,10 @@ class Game {
         if (this.player.checkCollisionBalls(ball)) {
           this.player.addPoints();
           this.balls.splice(index, 1);
-          if (this.player.lives === 0) {
+         // if (this.player.lives === 0) {
             //this.isGameOver = true;
            // this.onGameOver();
-          }
+         // }
         }
       });
     }

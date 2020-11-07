@@ -5,9 +5,9 @@ class Player {
       this.size = 180;
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
-      this.x = this.canvas.height /2;
-      this.y =  this.canvas.height -100 //10 + this.size / 2;
-      this.speed = 4;
+      this.x = this.canvas.height -100;
+      this.y =  this.canvas.height -90 //10 + this.size / 2;
+      this.speed = 1;
       this.direction = 0;
       this.points = points;
       this.image = "./images/Basketball-Net-PNG-High-Quality-Image.png"
@@ -18,16 +18,15 @@ class Player {
       this.x = this.x + this.direction * this.speed;
     }
   
-    draw() {  //Cambiar por imagen
+    draw() {  
 
       let canasta = new Image();
       canasta.src = this.image;
-     // this.ctx.fillStyle = "green";
       this.ctx.drawImage(canasta,
-        this.x - this.size / 2,
-        this.y - this.size / 2,
-        this.size,
-        this.size
+      this.x - this.size / 2,
+      this.y - this.size / 2,
+      this.size,
+      this.size
       );
     }
   
@@ -36,16 +35,16 @@ class Player {
     }
 
     moveLeft() {
-        this.x += 65;
+        this.x -= 65;
       }
       moveRight() {
         this.x += 65;
     }
 
     checkScreen() {
-      if (this.x - this.size / 2 <= 0) {
-        this.direction = 1;
-      } else if (this.x + this.size / 2 >= this.canvas.height) {
+     if (this.x - this.size / 2 <= 0) {
+       this.direction = 1;
+     } else if (this.x + this.size / 2 >= this.canvas.width) {
         this.direction = -1;
       }
     }
