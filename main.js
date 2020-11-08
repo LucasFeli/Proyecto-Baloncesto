@@ -23,15 +23,19 @@ const main = () => {
 
     const buildGameScreen = () => {
         buildDom(`
-            <div class= "pointer"> </div>
+            <p class= "pointer"> Canastas : </p>
+            
             <section class ="game-screen">
                 <canvas id = "canvas"></canvas>
                 
             </section>
-            <div class= "pointerB"> </div>
+            <div class= "pointerB"> Current Time </div>
             
         `);
 
+        //var audio = new Audio("./music/Lupus Nocte - Sunset Dew.mp3")
+        //audio.play()
+        
         const width = document.querySelector(".game-screen").offsetWidth;
         const height = document.querySelector(".game-screen").offsetHeight;
 
@@ -46,8 +50,8 @@ const main = () => {
 
         const setPlayerDirection = (event) => {
             switch (event.keyCode) {
-                case 37: game.player.moveLeft();  console.log('left',  game.player); break;
-                case 39: game.player.moveRight(); console.log('right', game.player); break;
+                case 37: game.player.moveLeft(); break;
+                case 39: game.player.moveRight(); break;
               }
         };
         document.addEventListener("keydown", setPlayerDirection);

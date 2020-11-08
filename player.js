@@ -7,7 +7,7 @@ class Player {
       this.ctx = this.canvas.getContext("2d");
       this.x = this.canvas.height -100;
       this.y =  this.canvas.height -90 //10 + this.size / 2;
-      this.speed = 1;
+      this.speed = 0;
       this.direction = 0;
       this.points = points;
       this.image = "./images/Basketball-Net-PNG-High-Quality-Image.png"
@@ -35,17 +35,23 @@ class Player {
     }
 
     moveLeft() {
-        this.x -= 65;
+      this.x -= 20;
+      if(this.x > this.canvas.width){
+        this.x = 20
       }
-      moveRight() {
-        this.x += 65;
     }
+      
+      moveRight() {
+        this.x += 20;
+      }
+      
 
     checkScreen() {
-     if (this.x - this.size / 2 <= 0) {
-       this.direction = 1;
-     } else if (this.x + this.size / 2 >= this.canvas.width) {
+     if (this.x - this.size / 2 <= -700) {
+       this.direction = -1;
+     } else if (this.x + this.size / 2 >= this.canvas.width -100) {
         this.direction = -1;
+        console.log(this.x)
       }
     }
   
@@ -65,17 +71,10 @@ class Player {
    //Points
    addPoints() {
       this.points ++;
-      document.querySelector(".pointer").innerHTML = "Canastas: <b>" + this.points;
+      document.querySelector(".pointer").innerText = `Canastas : ${this.points}`;
       
     }
-    /*
-    cronoTime(){
-        this.time --
-        document.querySelector(".pointer").innerHTML = "Time: <b>" + this.time;
-        setInterval( ()=>{this.time--}, 1000);
-        console.log(this.time)
-    }
-    */
+    
     
    
 }

@@ -6,8 +6,8 @@ class Balls {
         this.canvas = canvas;
         this.ctx = this.canvas.getContext("2d");
         this.x = x;
-        this.y = 10;
-        this.speed = 5;
+        this.y = 1;
+        this.speed = 3;
         this.direction = -1;
         this.image = "./images/58b4414eb0a84.image.png"
       }
@@ -21,7 +21,7 @@ class Balls {
       draw() {
         let balon = new Image();
         balon.src = this.image;
-        this.ctx.drawImage(balon,this.x, this.y + this.size/2 , this.size, this.size);
+        this.ctx.drawImage(balon,this.x, this.y + this.size , this.size, this.size);
       }
     
       setDirection(direction) {

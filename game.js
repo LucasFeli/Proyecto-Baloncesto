@@ -8,7 +8,8 @@ class Game {
       this.balls = [];
       this.isGameOver = false;
       this.intervalId = null;
-      this.time = 600;
+      this.time = 60;
+      this.initTime = true;
      
     }
   
@@ -23,10 +24,12 @@ class Game {
          this.onGameOver();
          
        }
-     }, 3000) 
+     }, 1000) 
      
     }
 
+
+    
     startLoop() {
       this.player = new Player(this.canvas, 3);
       
@@ -37,8 +40,13 @@ class Game {
           const y = Math.random() * this.canvas.height;
           this.balls.push(new Balls(this.canvas, y));
         }
+        if(this.initTime){
+          this.chronoTime()
+          this.initTime = false;
+        }
+
         
-        this.chronoTime()
+        
         this.checkAllCollisions();
         this.updateCanvas();
         this.clearCanvas();
@@ -75,10 +83,10 @@ class Game {
         if (this.player.checkCollisionBalls(ball)) {
           this.player.addPoints();
           this.balls.splice(index, 1);
-         // if (this.player.lives === 0) {
-            //this.isGameOver = true;
-           // this.onGameOver();
-         // }
+          if (this.player.lives === 3) {
+            this.isGameOver = true;
+           this.onGameOver();
+          }
         }
       });
     }
