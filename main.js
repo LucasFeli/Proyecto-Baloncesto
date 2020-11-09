@@ -10,9 +10,9 @@ const main = () => {
         buildDom(`
             <section class="splash-screen">
                 <h1>Bascket Carnival Simulator</h1>
-                <h3>Instrucciones de Juego</h1>
-                <p>Mover de Izquierda a Derecha, la canasta y acumular el mayor numero de puntos posibles<br>
-                si dejas pasar tres balones, tendras 600 segundos para acumular 
+                <h2>Instrucciones de Juego</h2>
+                <p>Mover de izquierda a derecha y viceverza, la canasta y acumular el mayor numero de puntos posibles<br>
+                , tendras 60 segundos para lograrlo Buena Suerte!
                 </p>
                 <button id = "game"> Start Game</button>
             </section>
@@ -29,7 +29,7 @@ const main = () => {
                 <canvas id = "canvas"></canvas>
                 
             </section>
-            <div class= "pointerB"> Current Time </div>
+            <p class= "pointerB"> Current Time </p>
             
         `);
 
@@ -52,7 +52,8 @@ const main = () => {
             switch (event.keyCode) {
                 case 37: game.player.moveLeft(); break;
                 case 39: game.player.moveRight(); break;
-              }
+            }
+            
         };
         document.addEventListener("keydown", setPlayerDirection);
 
@@ -61,9 +62,9 @@ const main = () => {
     const buildGameOver = () => {
         buildDom(`
             <section class="game-over">
-                <h1>GAME OVER</h1>
+                <h1>TIME UP</h1>
                 <button id = "game"> TRY AGAIN</button>
-                <div class= "pointer"> </div>
+               
             </section>
             
         `)

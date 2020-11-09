@@ -1,23 +1,28 @@
 
 body{
-    background-image: url("../images/f3e200d2c3dfd61d7d383593867a64eb.jpg") ;
+    background-image: url("../images/OIP.UQa6-ZevUtaxQXmv_GFV_gHaEK.jpeg") ;
+    
 }
 
 
 #canvas {
  width: 700px;
- height: 600px;
+ height: 800px;
  margin: 0 auto;
  display: block;
  border: 3px solid black;
- background-image: url("../images/dieta-baloncesto.jpg");
- 
+ background-image: url("../images/fondo2.jpg");
+ position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
 
 }
 
 
 .score{
-    display: inline-block;
+    display: block;
     width: 100px;
     height: 100px; 
     margin-left: 600px;
@@ -26,42 +31,88 @@ body{
 }
 
 
-
 .game-screen {
     width: 80%;
     height: 80vh;
+    
 }
 
 
 .splash-screen{
-    margin: auto;
-    align-items: center;
-    background-image: "url("f3e200d2c3dfd61d7d383593867a64eb")";
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+     text-align: center;
+;
 }
 
-h1{
+.splash-screen h1{
     font-weight: bold;
-    color: blue;
+    font-size: 65px;
+    color : white;
+    font-family: 'Bungee Shade', cursive;
+    text-align: center;
+}
+.splash-screen h2{
+    font-family: 'Bangers', cursive;
+    color: white;
+}
+
+.splash-screen{
+    font-family: 'Bangers', cursive;
+    color: white;
 }
 
 #game {
-  background-color: #4CAF50; /* Green */
+  background-color: blue; /* Green */
   border: none;
   color: white;
   padding: 20px;
   text-align: center;
+  font-family: 'Bangers', cursive;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  font-size: 20px;
+  margin: 4px 4px;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 9px;
 }
 
-.pointer{
-    display: flex;
+
+p.pointer{
+    display: inline-block;
+    font-family: 'Bangers', cursive;
+    color: white;
+    font-size: 35px;
+}
+p.pointerB{
+    display: absolute;
+    font-family: 'Bangers', cursive;
+    color: white;
+    font-size: 35px;
 }
 
 .container {
     background-image: "url(../images/f3e200d2c3dfd61d7d383593867a64eb.jpg)";
+}
+
+.game-over{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.game-over h1{
+    font-weight: bold;
+    font-size: 65px;
+    color : white;
+    font-family: 'Bungee Shade', cursive;
+    text-align: center;
 }

@@ -9,7 +9,7 @@ class Balls {
         this.y = 1;
         this.speed = 3;
         this.direction = -1;
-        this.image = "./images/58b4414eb0a84.image.png"
+        this.image = "./images/Balon.png"
       }
     
       update() {

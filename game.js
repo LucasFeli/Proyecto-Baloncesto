@@ -17,7 +17,7 @@ class Game {
       const timer = document.querySelector(".pointerB")
       this.intervalId = setInterval( () => {
        this.time--
-       timer.innerHTML = "Currennt time <br>" + this.time
+       timer.innerText = `Current time : ${this.time}`
          if(this.time == 0) {
          clearInterval(this.intervalId)
          this.isGameOver = true
@@ -83,10 +83,7 @@ class Game {
         if (this.player.checkCollisionBalls(ball)) {
           this.player.addPoints();
           this.balls.splice(index, 1);
-          if (this.player.lives === 3) {
-            this.isGameOver = true;
-           this.onGameOver();
-          }
+          
         }
       });
     }
