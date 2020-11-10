@@ -70,8 +70,8 @@ class Player {
    //Points
    addPoints() {
       this.points ++;
-      document.querySelector(".pointer").innerText = `Canastas : ${this.points}`;
-     
+      //document.querySelector(".pointer").innerText = `Canastas : ${this.points}`;
+      document.querySelector("#score").innerText = `${this.points}`;
       
     }
     

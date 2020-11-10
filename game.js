@@ -13,6 +13,7 @@ class Game {
       this.initTime = true;
       this.scoreEle = scoreEle
       
+      
      
     }
   

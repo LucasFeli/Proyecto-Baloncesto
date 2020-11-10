@@ -28,14 +28,14 @@ const main = () => {
     });
     };
 
-    const buildGameScreen = (name, points) => {
+    const buildGameScreen = (name) => {
         buildDom(`
-            <p class= "pointer"> Canastas : </p>
+            
             
             <section class ="game-screen">
             <div id = "display">
-                <p>Player's name: ${name}</p>
-                <p>Score:${points} <span id="score"></span></p>
+                <p>Nombre del Jugador:  ${name}</p>
+                <p>Canastas: <span id="score"></span></p>
             </div>
                 <canvas id = "canvas"></canvas>
             </section>
@@ -74,7 +74,7 @@ const main = () => {
             
         };
         document.addEventListener("keydown", setPlayerDirection);
-
+         
     };
 
     const setScore = (playerName, newScore) => {
@@ -90,7 +90,7 @@ const main = () => {
         const newScoreObj = { name: playerName, score: newScore };
         topScoresArr.push(newScoreObj);
 
-        console.log(newScoreObj)
+        
        
         const updatedScoresStr = JSON.stringify(topScoresArr);
        
@@ -113,7 +113,7 @@ const main = () => {
         return b.score - a.score;
     })
 
-    console.log(orderedScores)
+    
     
         const scoreElements = orderedScores.reduce((acc, scoreObj) => {
         return `${acc} <li>${scoreObj.name}: ${scoreObj.score}</li>`;
