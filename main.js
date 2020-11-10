@@ -106,9 +106,12 @@ const main = () => {
         let orderedScores = [...scores].sort((a, b) => {
         return b.score - a.score;
     })
+
+    console.log(orderedScores)
     // para cada objeto score dentro de ese array, devolver un elemento <li> (y pasar scoreElements dentro de buildDom())
         const scoreElements = orderedScores.reduce((acc, scoreObj) => {
         return `${acc} <li>${scoreObj.name}: ${scoreObj.score}</li>`;
+        
     }, '')
 
         buildDom(`

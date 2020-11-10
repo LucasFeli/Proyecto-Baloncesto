@@ -24,7 +24,7 @@ class Game {
          if(this.time == 0) {
          clearInterval(this.intervalId)
          this.isGameOver = true
-         this.onGameOver(this.name, this.scoreEle);
+         this.onGameOver(this.name, this.player.points);
          
        }
      }, 1000) 
