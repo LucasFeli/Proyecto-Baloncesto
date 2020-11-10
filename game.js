@@ -9,7 +9,7 @@ class Game {
       this.balls = [];
       this.isGameOver = false;
       this.intervalId = null;
-      this.time = 10;
+      this.time = 60;
       this.initTime = true;
       this.scoreEle = scoreEle
       
