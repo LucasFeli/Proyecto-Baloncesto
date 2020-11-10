@@ -3,11 +3,11 @@ Primer proyecto para el Bootcamp
 
 # Descripcion
 
-El juego esta inspirado en las maquinas de las ferias donde se debia lanzar varios balones en tiempo limite a la canasta de puntos, la version de que creare sera al reves, se manejara el canasta y habra que atrapar los balones.
+El juego consiste en atrapar la maxima cantidad de balones en menos de 1 minuto, este juego esta inspirado en un juego de feria de similares caracteristicas
 
 # MVP (DOM -CANVAS)
 
-En principio la canasta se movera de derecha a izquierda y viceverza, el objetivo principal es atrapar los balones llovidos de la parte superior de la pantalla de forma random, si dejas escapar tres balones debajo del canasto pierdes el juego.
+En principio la canasta se movera de derecha a izquierda y viceverza con las teclas <- -> , el objetivo principal es atrapar los balones que caen de la parte superior de la pantalla en menos de 1 minuto.
 
 # Data Structure
 
@@ -31,9 +31,19 @@ En principio la canasta se movera de derecha a izquierda y viceverza, el objetiv
 - Refactorizar y pintar en el HTML la cantidad de puntos
 - colocar una cuenta regresiva para recolectar la maxima cantidad posible de balones en el juego
 - Se agregaron las imagenes del balon y la canasta
+- Se agrego limite de tiempo
+- Colocar las imagenes de fondo del pantalla y del canvas
 
 # Backlog
 
-- Crear un limite de tiempo (1 minuto),para recolectar balones.
 - Crear al menos otra pantalla.
 - Colocar las imagenes de fondo del pantalla y del canvas
+
+
+# Trello
+
+- https://trello.com/b/hdK1Z4UL/proyecto-baloncesto
+
+# Juego en GitPages
+
+- https://lucasfeli.github.io/Proyecto-Baloncesto/.

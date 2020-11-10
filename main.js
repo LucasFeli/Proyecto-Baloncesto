@@ -15,7 +15,7 @@ const main = () => {
                 , tendras 60 segundos para lograrlo Buena Suerte!
                 </p>
                 <label>Ingresa tu nombre:
-              <input type="text" id="name">
+              <input type="text" id="name" placeholder = "agrege su nombre">
             </label>
                 <button id = "game"> Start Game</button>
             </section>
