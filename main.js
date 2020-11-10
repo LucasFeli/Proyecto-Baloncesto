@@ -119,7 +119,8 @@ const main = () => {
                 <h1>TIME UP</h1>
                 <h3>Son: ${score} Canastas para ${name}</h3>
                 <button id = "game"> TRY AGAIN</button>
-                <ul>${scoreElements}</ul>
+                <p> Listado por Nombres y Canastas</p>
+                <ul>${scoreElements} </ul>
             </section>
             
         `)

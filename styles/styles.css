@@ -132,3 +132,11 @@ p.pointerB{
     font-weight: lighter;
     font-size: 25px;
 }
+
+.game-over p{
+    display: absolute;
+    font-family: 'Bangers', cursive;
+    color: white;
+    font-weight: lighter;
+    font-size: 25px;
+}
