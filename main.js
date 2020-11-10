@@ -117,7 +117,7 @@ const main = () => {
         buildDom(`
             <section class="game-over">
                 <h1>TIME UP</h1>
-                <h3>Score: ${score} seconds for ${name}</h3>
+                <h3>Son: ${score} Canastas para ${name}</h3>
                 <button id = "game"> TRY AGAIN</button>
                 <ul>${scoreElements}</ul>
             </section>
