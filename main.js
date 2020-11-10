@@ -15,7 +15,7 @@ const main = () => {
                 , tendras 60 segundos para lograrlo Buena Suerte!
                 </p>
                 <label>Ingresa tu nombre:
-              <input type="text" id="name" placeholder = "agrege su nombre">
+              <input  type="text" id="name" autofocus placeholder = "agregar nombre">
             </label>
                 <button id = "game"> Start Game</button>
             </section>
@@ -28,18 +28,18 @@ const main = () => {
     });
     };
 
-    const buildGameScreen = (name) => {
+    const buildGameScreen = (name, points) => {
         buildDom(`
             <p class= "pointer"> Canastas : </p>
             
             <section class ="game-screen">
             <div id = "display">
                 <p>Player's name: ${name}</p>
-                <p>Score: <span id="score"></span></p>
+                <p>Score:${points} <span id="score"></span></p>
             </div>
                 <canvas id = "canvas"></canvas>
             </section>
-            <p class= "pointerB">Canastas :</p>
+            <p class= "pointerB">Tiempo :</p>
 
         `);
 
@@ -62,8 +62,14 @@ const main = () => {
 
         const setPlayerDirection = (event) => {
             switch (event.keyCode) {
-                case 37: game.player.moveLeft(); break;
-                case 39: game.player.moveRight(); break;
+                case 37: 
+                if (game.player.x >= (game.player.size / 2)) {
+                game.player.moveLeft(); 
+                }break;
+                case 39: 
+                if (game.player.x <= width - (game.player.size / 2)) {
+                game.player.moveRight(); 
+                }break;
             }
             
         };
@@ -100,15 +106,15 @@ const main = () => {
   
 
     const buildGameOver = (name,score) => {
-        // recoger el array de scores
+        
         const scores = setScore(name, score);
-        // ordenar los scores en orden ascendiente
+        
         let orderedScores = [...scores].sort((a, b) => {
         return b.score - a.score;
     })
 
     console.log(orderedScores)
-    // para cada objeto score dentro de ese array, devolver un elemento <li> (y pasar scoreElements dentro de buildDom())
+    
         const scoreElements = orderedScores.reduce((acc, scoreObj) => {
         return `${acc} <li>${scoreObj.name}: ${scoreObj.score}</li>`;
         

@@ -50,7 +50,7 @@ class Player {
        this.direction = -1;
      } else if (this.x + this.size / 2 >= this.canvas.width -100) {
         this.direction = 1;
-        //console.log(this.x)
+       
       }
     }
   
