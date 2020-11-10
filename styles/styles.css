@@ -13,22 +13,14 @@ body{
  border: 3px solid black;
  background-image: url("../images/fondo2.jpg");
  position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+ top: 50%;
+ left: 50%;
+ margin-right: -50%;
+ transform: translate(-50%, -50%)
 
 }
 
 
-.score{
-    display: block;
-    width: 100px;
-    height: 100px; 
-    margin-left: 600px;
-    margin-bottom: 800px;
-    border: 3px solid black;
-}
 
 
 .game-screen {
@@ -83,13 +75,13 @@ body{
 
 
 p.pointer{
-    display: inline-block;
+    display: block;
     font-family: 'Bangers', cursive;
     color: white;
     font-size: 35px;
 }
 p.pointerB{
-    display: absolute;
+    display: block;
     font-family: 'Bangers', cursive;
     color: white;
     font-size: 35px;
@@ -115,4 +107,28 @@ p.pointerB{
     color : white;
     font-family: 'Bungee Shade', cursive;
     text-align: center;
+}
+
+.game-over h3{
+    display: absolute;
+    font-family: 'Bangers', cursive;
+    color: white;
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+.game-over li{
+    display: absolute;
+    font-family: 'Bangers', cursive;
+    color: white;
+    font-weight: lighter;
+    font-size: 25px;
+}
+
+#display p{
+    display: absolute;
+    font-family: 'Bangers', cursive;
+    color: white;
+    font-weight: lighter;
+    font-size: 25px;
 }

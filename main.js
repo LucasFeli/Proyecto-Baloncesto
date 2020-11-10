@@ -9,28 +9,38 @@ const main = () => {
     const buildSplashScreen = () =>{
         buildDom(`
             <section class="splash-screen">
-                <h1>Bascket Carnival Simulator</h1>
+                <h1>Basketball Carnival Simulator</h1>
                 <h2>Instrucciones de Juego</h2>
                 <p>Mover de izquierda a derecha y viceverza, la canasta y acumular el mayor numero de puntos posibles<br>
                 , tendras 60 segundos para lograrlo Buena Suerte!
                 </p>
+                <label>Ingresa tu nombre:
+              <input type="text" id="name">
+            </label>
                 <button id = "game"> Start Game</button>
             </section>
         `);
+        const nameInput = document.getElementById("name");
         const startButton = document.querySelector("button");
-        startButton.addEventListener("click",buildGameScreen)
+        startButton.addEventListener("click", () => {
+        let name = nameInput.value;
+        buildGameScreen(name);
+    });
     };
 
-    const buildGameScreen = () => {
+    const buildGameScreen = (name) => {
         buildDom(`
             <p class= "pointer"> Canastas : </p>
             
             <section class ="game-screen">
+            <div id = "display">
+                <p>Player's name: ${name}</p>
+                <p>Score: <span id="score"></span></p>
+            </div>
                 <canvas id = "canvas"></canvas>
-                
             </section>
-            <p class= "pointerB"> Current Time </p>
-            
+            <p class= "pointerB">Canastas :</p>
+
         `);
 
         //var audio = new Audio("./music/Lupus Nocte - Sunset Dew.mp3")
@@ -43,7 +53,9 @@ const main = () => {
         canvasElement.setAttribute("width",width);
         canvasElement.setAttribute("height",height);
 
-        const game = new Game(canvasElement);
+        let scoreEle = document.querySelector('.pointer');
+
+        const game = new Game(canvasElement, name, scoreEle);
         game.gameOverCallback(buildGameOver);
 
         game.startLoop()
@@ -59,19 +71,58 @@ const main = () => {
 
     };
 
-    const buildGameOver = () => {
+    const setScore = (playerName, newScore) => {
+        
+        const topScoresStr = localStorage.getItem('topScores');
+        
+        
+        let topScoresArr = [];
+       
+        if(topScoresStr) topScoresArr = JSON.parse(topScoresStr);
+    
+        
+        const newScoreObj = { name: playerName, score: newScore };
+        topScoresArr.push(newScoreObj);
+
+        console.log(newScoreObj)
+       
+        const updatedScoresStr = JSON.stringify(topScoresArr);
+       
+        localStorage.setItem('topScores', updatedScoresStr);
+    
+       
+        return topScoresArr;
+
+        
+      }
+      
+      
+  
+
+    const buildGameOver = (name,score) => {
+        // recoger el array de scores
+        const scores = setScore(name, score);
+        // ordenar los scores en orden ascendiente
+        let orderedScores = [...scores].sort((a, b) => {
+        return b.score - a.score;
+    })
+    // para cada objeto score dentro de ese array, devolver un elemento <li> (y pasar scoreElements dentro de buildDom())
+        const scoreElements = orderedScores.reduce((acc, scoreObj) => {
+        return `${acc} <li>${scoreObj.name}: ${scoreObj.score}</li>`;
+    }, '')
+
         buildDom(`
             <section class="game-over">
                 <h1>TIME UP</h1>
+                <h3>Score: ${score} seconds for ${name}</h3>
                 <button id = "game"> TRY AGAIN</button>
-               
+                <ul>${scoreElements}</ul>
             </section>
             
         `)
     const restartButton = document.querySelector("button");
-    restartButton.addEventListener("click",buildGameScreen)
-     
-    };
+    restartButton.addEventListener("click", () => buildSplashScreen(name));
+  };
 
     buildSplashScreen();
 }

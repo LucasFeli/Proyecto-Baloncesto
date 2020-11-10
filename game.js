@@ -1,15 +1,18 @@
 "use strict";
 
 class Game {
-    constructor(canvas) {
+    constructor(canvas,name,scoreEle) {
       this.canvas = canvas;
+      this.name = name ;
       this.ctx = this.canvas.getContext("2d");
       this.player;
       this.balls = [];
       this.isGameOver = false;
       this.intervalId = null;
-      this.time = 60;
+      this.time = 10;
       this.initTime = true;
+      this.scoreEle = scoreEle
+      
      
     }
   
@@ -17,17 +20,17 @@ class Game {
       const timer = document.querySelector(".pointerB")
       this.intervalId = setInterval( () => {
        this.time--
-       timer.innerText = `Current time : ${this.time}`
+       timer.innerText = `Tiempo : ${this.time}`
          if(this.time == 0) {
          clearInterval(this.intervalId)
          this.isGameOver = true
-         this.onGameOver();
+         this.onGameOver(this.name, this.scoreEle);
          
        }
      }, 1000) 
      
     }
-
+    
 
     
     startLoop() {

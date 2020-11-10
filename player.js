@@ -71,7 +71,7 @@ class Player {
    addPoints() {
       this.points ++;
       document.querySelector(".pointer").innerText = `Canastas : ${this.points}`;
-      
+     
       
     }
     
