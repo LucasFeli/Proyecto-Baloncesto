@@ -6,7 +6,7 @@ class Player {
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
       this.x = this.canvas.height -100;
-      this.y =  this.canvas.height -90 //10 + this.size / 2;
+      this.y =  this.canvas.height -90 
       this.speed = 0;
       this.direction = 0;
       this.points = points;
@@ -70,7 +70,7 @@ class Player {
    //Points
    addPoints() {
       this.points ++;
-      //document.querySelector(".pointer").innerText = `Canastas : ${this.points}`;
+     
       document.querySelector("#score").innerText = `${this.points}`;
       
     }

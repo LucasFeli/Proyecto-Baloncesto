@@ -35,13 +35,13 @@ class Game {
 
     
     startLoop() {
-      this.player = new Player(this.canvas, 3);
+      this.player = new Player(this.canvas, 0);
       
      
   
       const loop = () => {
-        if (Math.random() > 0.97) {
-          const y = Math.random() * this.canvas.height;
+        if (Math.floor(Math.random() > 0.98)) {
+          const y = Math.floor(Math.random() * this.canvas.height) ;
           this.balls.push(new Balls(this.canvas, y));
         }
         if(this.initTime){
